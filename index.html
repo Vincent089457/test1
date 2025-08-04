@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時尚衣服拍賣網</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-tshirt"></i>
+                <span>時尚拍賣</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#auctions">拍賣中</a></li>
+                <li><a href="#categories">分類</a></li>
+                <li><a href="#about">關於我們</a></li>
+                <li><a href="#contact">聯絡</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主頁橫幅 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>發現獨特時尚</h1>
+            <p>參與我們的線上衣服拍賣，找到您心愛的時尚單品</p>
+            <button class="cta-button">開始競標</button>
+        </div>
+        <div class="hero-image">
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+    </section>
+
+    <!-- 熱門拍賣 -->
+    <section id="auctions" class="auctions-section">
+        <div class="container">
+            <h2>熱門拍賣中</h2>
+            <div class="auction-grid" id="auctionGrid">
+                <!-- 拍賣商品將由 JavaScript 動態生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 分類區域 -->
+    <section id="categories" class="categories-section">
+        <div class="container">
+            <h2>商品分類</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="男裝">
+                    <i class="fas fa-male"></i>
+                    <h3>男裝</h3>
+                    <p>襯衫、西裝、休閒服</p>
+                </div>
+                <div class="category-card" data-category="女裝">
+                    <i class="fas fa-female"></i>
+                    <h3>女裝</h3>
+                    <p>洋裝、上衣、裙子</p>
+                </div>
+                <div class="category-card" data-category="配件">
+                    <i class="fas fa-gem"></i>
+                    <h3>配件</h3>
+                    <p>包包、鞋子、飾品</p>
+                </div>
+                <div class="category-card" data-category="運動服">
+                    <i class="fas fa-running"></i>
+                    <h3>運動服</h3>
+                    <p>運動衣、球鞋、健身服</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 拍賣詳情模態框 -->
+    <div id="auctionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <div class="auction-details">
+                        <div class="current-bid">
+                            <span>目前出價：</span>
+                            <span id="modalCurrentBid" class="bid-amount"></span>
+                        </div>
+                        <div class="time-left">
+                            <span>剩餘時間：</span>
+                            <span id="modalTimeLeft" class="time-countdown"></span>
+                        </div>
+                    </div>
+                    <div class="bid-section">
+                        <input type="number" id="bidInput" placeholder="輸入您的出價" min="0" step="10">
+                        <button id="placeBidBtn" class="bid-button">出價</button>
+                    </div>
+                    <div class="bid-history">
+                        <h3>出價記錄</h3>
+                        <div id="bidHistoryList" class="bid-list">
+                            <!-- 出價記錄將動態生成 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁腳 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>時尚拍賣</h3>
+                    <p>您的時尚購物首選平台</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速連結</h3>
+                    <ul>
+                        <li><a href="#home">首頁</a></li>
+                        <li><a href="#auctions">拍賣中</a></li>
+                        <li><a href="#categories">分類</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>聯絡我們</h3>
+                    <p><i class="fas fa-envelope"></i> info@fashionauction.com</p>
+                    <p><i class="fas fa-phone"></i> (02) 1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 時尚拍賣網. 版權所有.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
